@@ -1,4 +1,3 @@
-# ========== [ UI Box ] ==========
 <div>
 <img src="https://user-images.githubusercontent.com/84368302/143670717-334ab23d-cfe2-4ec8-8620-e446a150519a.gif" alt="drawing" width="350"/>
 <img src="https://user-images.githubusercontent.com/84368302/143670784-306390e2-b633-49fa-9223-4c647da30dd6.gif" width="300"/>
@@ -10,7 +9,7 @@
 <br>
 
 
-## UI_Box 란? 
+# UI_Box 란? 
 CSS 의 animation, transition과 javascript를 사용해 웹의 다양한 효과와 UI
 - 사용기술 : HTML / CSS / javascript / canvas / webGL
 <br>
