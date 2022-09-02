@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Glory", sans-serif;
+}
+
+/* 배경만들기 */
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#f00, rgba(0, 0, 0, 0.5)), url(./wall.jpg);
+  /*  background-blend-mode 는 요소가 겹칠 경우 색상이 어떻게 나타나야 하는지 정의한다.  */
+  background-blend-mode: multiply;
+  background-size: cover;
+  animation-name: animateBgColor;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes animateBgColor {
+  0% {
+    /* hue-rotate -> 색조회전 */
+    /* 배경색이 지정이 되 있어야 한다. */
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 조명1 만들기 */
+section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  /* background: transparent를 적용한 이유는 미리 다른 배경 색상이 설정되어 있을 경우 충돌을 막기위해 */
+  background: radial-gradient(rgba(255, 0, 0, 0.75), transparent, transparent);
+  border-radius: 50%;
+}
+/* 조명2 만들기 */
+section::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  /* background: transparent를 적용한 이유는 미리 다른 배경 색상이 설정되어 있을 경우 충돌을 막기위해 */
+  background: radial-gradient(rgba(255, 0, 0, 0.75), transparent, transparent);
+  border-radius: 50%;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+
+.icon h2 {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  font-size: 2em;
+  font-weight: normal;
+  text-shadow: 0 10px 10px #000;
+  overflow: hidden;
+  animation-name: textTyping;
+  animation-duration: 5s;
+  animation-timing-function: steps(7);
+  animation-iteration-count: infinite;
+}
+/* text animation */
+/* width가 1px로 줄어들었다 123.16px늘어난다. */
+/* animation 은 steps 속성으로 끊어져서 진행되기때문에 타자치는 효과로 보인다. */
+@keyframes textTyping {
+  0%,
+  90%,
+  100% {
+    width: 1px;
+  }
+  30%,
+  60% {
+    /* text를 담고있는 요소의 width 길이 */
+    width: 123.16px;
+  }
+}
+
+/* icon svg 조작 */
+.icon svg path {
+  /* stroke -> 테두리 */
+  stroke: #fff;
+  stroke-width: 10px;
+  /* 내부 색상 투명하게 */
+  fill: transparent;
+  /* 그림자 생성 */
+  filter: drop-shadow(0 20px 10px #000) blur(2px);
+}

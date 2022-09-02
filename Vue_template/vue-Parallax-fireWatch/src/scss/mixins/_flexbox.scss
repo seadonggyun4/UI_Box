@@ -1,0 +1,45 @@
+//[Flex 리팩토링]
+
+//map
+//map 은 key:value 로 이루어져있다.
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+
+// @function를 통해 함수 생성
+// 함수 인 만큼 return 즉 반환값을 만들수 있다.
+@function _get_flex_value($key) {
+  //map-get은 sass에서 제공하는 내장함수
+  //map-get을 통해 map을 받아올수 있다.
+  //받아온 flex-map에 $key 인자 값을 넘겨 반환
+  @return map-get($flex-map, $key);
+}
+
+//[스텐다드 flexbox]
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  //생성한 _get_flex_value 함수를 통해 ai,jc등의 값을 인자값 $key로 넘긴다.
+  align-items: _get_flex_value($ai);
+  justify-content: _get_flex_value($jc);
+}
+
+//[inline- flexbox]
+@mixin inline-flexbox($jc: center, $ai: center) {
+  display: inline-flex;
+  align-items: _get_flex_value($ai);
+  justify-content: _get_flex_value($jc);
+}
+
+//[column- flexbox]
+@mixin column-flexbox($jc: center, $ai: center) {
+  display: flex;
+  align-items: _get_flex_value($ai);
+  flex-direction: column;
+  justify-content: _get_flex_value($jc);
+}
+

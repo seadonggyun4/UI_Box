@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input{
+    border: none;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+
+.wrapper{
+    padding: 30px;
+    width: 450px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+}
+
+
+.wrapper .input-data{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+
+
+/* 언더라인 */
+.wrapper .input-data .underline{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+}
+
+
+.wrapper .input-data .underline::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #4158d0;
+    transform: scaleX(0);
+    transition: transform .3s ease;
+}
+
+
+.input-data input:focus ~ .underline::after,
+.input-data input:valid ~ .underline::after{
+    transform: scaleX(1);
+}
+
+
+
+
+
+/* input */
+.wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid silver;
+    font-size: 17px;
+}
+
+/* placeholder */
+.wrapper .input-data input::placeholder{
+    font-size: 10px;
+    color: gery;
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.input-data input:focus::placeholder,
+.input-data input:valid::placeholder{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+/* 라벨 */
+.wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: .3s;
+}
+
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+    font-size: 15px;
+    color: #4158d0;
+    transform: translateY(-20px);
+}
+

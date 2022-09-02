@@ -1,0 +1,148 @@
+/* base */
+@font-face {
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2479807/neuzeit.woff2") format("woff2");
+  font-family: "Neuzeit";
+}
+img {
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Neuzeit", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+
+/* title section */
+.hero {
+  background-color: #fff;
+}
+.hero__background {
+  position: absolute;
+  z-index: 1;
+  top: 0%;
+  height: 0%;
+  width: 100%;
+  background: #090e18;
+}
+.hero__top {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero__top h1 {
+  color: #fff;
+  font-size: 80px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  max-width: 600px;
+  z-index: 3;
+  position: relative;
+}
+@media (max-width: 960px) {
+  .hero__top h1 {
+    font-size: 32px;
+  }
+}
+.hero__top p {
+  mix-blend-mode: difference;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 18px;
+  z-index: 3;
+  position: relative;
+}
+.hero__bottom {
+  height: 60vh;
+}
+.hero__bottom img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* 가로 section */
+.about {
+  background-color: #fff;
+}
+.about__item {
+  display: inline-block;
+  width: 700px;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.about__item:nth-child(odd) img {
+  margin-bottom: 64px;
+}
+.about__item:nth-child(even) {
+  flex-direction: column-reverse;
+}
+.about__item img {
+  object-fit: cover;
+  height: 500px;
+  width: 500px;
+}
+.about__item .content {
+  height: 50%;
+  max-width: 500px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.about__item .content h3 {
+  font-size: 32px;
+  max-width: 250px;
+  line-height: 1.2;
+}
+.about__item .content p {
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 350px;
+  margin-top: 8px;
+}
+
+.horizontal-scroll__section {
+  position: relative;
+  height: 350vh;
+}
+.horizontal-scroll__wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.horizontal-scroll__content {
+  display: flex;
+  padding: 80px;
+  height: 100vh;
+  width: 350vh;
+  will-change: transform;
+}
+
+
+
+/* extra-section */
+.extra-section {
+  height: 200vh;
+  background-color: #020407;
+}

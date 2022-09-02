@@ -1,0 +1,83 @@
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+  background-color: #fbfbfb;
+}
+body .block-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 32px;
+  transition: 250ms;
+  perspective: 500px;
+}
+body .block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  border-radius: 32px;
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(15deg);
+  will-change: transform;
+  box-shadow: 16px 0 40px #e4e4e4;
+}
+body .block-container .btn-back-1 {
+  background: linear-gradient(135deg, #4682eb -20%, #01beff 120%);
+}
+body .block-container .btn-back-2 {
+  background: linear-gradient(135deg, #5c46eb -20%, #013fff 120%);
+}
+body .block-container .btn-back-3 {
+  background: linear-gradient(135deg, #ebe046 -20%, #ffac01 120%);
+}
+body .block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  border-radius: 32px;
+  background-color: #ffffff33;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+}
+body .block-container .btn-front svg.frame {
+  width: inherit;
+  height: inherit;
+}
+body .block-container .btn-front svg.frame rect {
+  width: inherit;
+  height: inherit;
+  fill: none;
+  stroke-width: 4;
+}
+body .block-container .btn-front svg.icon {
+  position: absolute;
+  inset: 50% 0 0 50%;
+  transform: translate(-50%, -50%);
+}
+body .block-container:hover > .btn-back {
+  transform: translateZ(20px) rotateZ(15deg) rotateX(-20deg) rotateY(-20deg);
+}
+body .block-container:hover > .btn-front {
+  transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+}

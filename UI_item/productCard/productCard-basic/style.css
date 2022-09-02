@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #091836;
+}
+.container {
+  position: relative;
+}
+
+.container .card {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  background: #232323;
+  border-radius: 20px;
+  /* 넘치는 요소를 감춘다 */
+  overflow: hidden;
+}
+
+/* clip-path 이벤트 */
+.container .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9bdc28;
+  clip-path: circle(160px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+  clip-path: circle(310px at 80% -20%);
+}
+
+/* "NIKE" text 컨텐츠 */
+.container .card::after {
+  content: "Nike";
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+}
+
+/* "NIKE shose" 이미지 컨텐츠 */
+.container .card .imgbox {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.container .card:hover .imgbox {
+  top: 0%;
+  transform: translateY(0%);
+}
+
+.container .card .imgbox img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-25deg);
+}
+/* card conttentbox 컨텐츠 */
+.container .card .contentbx {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+}
+
+.container .card:hover .contentbx {
+  height: 210px;
+}
+
+.container .card:hover .contentbx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+/* size 컬렉션, color 컬렉션 */
+.container .card .contentbx .size,
+.container .card .contentbx .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card:hover .contentbx .size {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card:hover .contentbx .color {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.container .card .contentbx .size h3,
+.container .card .contentbx .color h3 {
+  margin-right: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/*  size 크기 선택 */
+.container .card:hover .contentbx .size span {
+  display: inline-block;
+  margin: 0 5px;
+  width: 26px;
+  height: 26px;
+  color: #111;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.container .card:hover .contentbx .size span:hover {
+  background-color: #9bdc28;
+}
+
+.container .card .contentbx .color span {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/*  color 색상 선택 */
+.container .card:hover .contentbx .color span:nth-child(2) {
+  background-color: #9bdc28;
+}
+
+.container .card:hover .contentbx .color span:nth-child(3) {
+  background-color: #03a9f4;
+}
+
+.container .card:hover .contentbx .color span:nth-child(4) {
+  background-color: #e91e63;
+}
+/*  구매 버튼 */
+.container .card .contentbx a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: #111;
+  background: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(50px);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.container .card:hover .contentbx a {
+  transform: translateY(0px);
+  transition-delay: 0.75s;
+  opacity: 1;
+}

@@ -1,0 +1,277 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Noto Sans KR";
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+form,
+fieldset {
+  outline: none;
+  border: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0px 20px;
+  margin-right: 20px;
+  height: 47px;
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  overflow: hidden;
+}
+.btn .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.btn .icon ion-icon {
+  font-size: 1.55em;
+}
+.btn p {
+  width: 100%;
+  font-size: 15px;
+  line-height: 1em;
+  font-weight: 700;
+}
+.btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.05;
+  transform: scaleX(0);
+  transform-origin: 100% 100%;
+  transition: transform 0.6s cubic-bezier(0.53, 0.21, 0, 1);
+  will-change: transform;
+}
+.btn:hover::after {
+  transform: scaleX(100%);
+  transform-origin: 0 0;
+}
+
+.is-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.is-logo .logo {
+  display: inline-block;
+  width: 34px;
+  height: 38px;
+  transition: transform 0.2s 0.35s;
+  will-change: transform;
+}
+.is-logo .logo svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 80px;
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+}
+header .menu-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu-btn .btn:nth-of-type(1) {
+  background: #272727;
+}
+header .menu-btn .btn:nth-of-type(2) {
+  background: #705df2;
+}
+header .menu-btn .btn:nth-of-type(3) {
+  background: #5c43f5;
+}
+header .menu-btn .btn:last-child {
+  margin-right: 0;
+}
+
+section {
+  padding-top: 80px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+section .container .panel {
+  position: relative;
+  width: 550px;
+  background: #202020;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+section .container .panel .head {
+  padding: 40px;
+  font-size: 1.25em;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.024);
+}
+section .container .panel .head h1 {
+  font-weight: 700;
+}
+section .container .panel .body {
+  padding: 40px;
+}
+section .container .panel .body form fieldset {
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+}
+section .container .panel .body form fieldset .js-filed {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  height: 80px;
+  max-width: 550px;
+  margin-bottom: 10px;
+  background: #131313;
+  border-radius: 12px;
+}
+section .container .panel .body form fieldset .js-filed label {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  padding-left: 20px;
+  font-weight: 700;
+  justify-content: flex-start;
+  align-items: center;
+  pointer-events: none;
+  line-height: 1.1em;
+}
+section .container .panel .body form fieldset .js-filed label span {
+  color: #fff;
+}
+section .container .panel .body form fieldset .js-filed label span .faded {
+  padding-left: 3px;
+  opacity: 0.4;
+  font-weight: 400;
+}
+section .container .panel .body form fieldset .js-filed input {
+  width: 100%;
+  height: 100%;
+  padding-right: 20px;
+  padding-left: calc(40% + 20px);
+  background: #131313;
+  border-radius: 12px;
+  color: #fff;
+}
+section .container .panel .body form fieldset .forget {
+  text-align: right;
+}
+section .container .panel .body form fieldset .forget a {
+  color: #fff;
+  text-decoration: underline;
+}
+section .container .panel .body form .submit.btn {
+  width: 100px;
+  background: #705df2;
+  text-align: center;
+}
+
+footer {
+  padding-top: 50px;
+  padding-right: 25px;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  background: #202020;
+}
+footer .inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 25px;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: #fff;
+}
+footer .inner .column {
+  margin-right: 3em;
+  margin-bottom: 2em;
+  font-size: 16px;
+  text-align: left;
+}
+footer .inner .column h3 {
+  margin-bottom: 0.75em;
+  font-weight: 700;
+  font-size: 18px;
+}
+footer .inner .column ul li {
+  line-height: 1.5em;
+}
+footer .inner .column ul li a {
+  color: #fff;
+}
+footer .inner .column.is-logo {
+  width: 100%;
+}
+footer .inner .column:last-child {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #110809;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1;
+}
+
+.st {
+  text-align: center;
+  flex: 0 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Cochin";
+  font-size: 5em;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px red;
+  filter: drop-shadow(0 0 15px red);
+}
+
+.l {
+  font-size: 1.4em;
+  vertical-align: -0.175em;
+  margin-top: -0.2em;
+}
+
+.full {
+  flex: 1 0 100%;
+}
+
+.w {
+  white-space: nowrap;
+}
+.w-2 {
+  margin: 0 0.1em;
+  margin-top: -0.4em;
+}
+
+.decorator {
+  height: 0.1em;
+  border: 2px solid red;
+  flex: 1 0 auto;
+}
+
+.input {
+  position: absolute;
+  bottom: 2em;
+  text-align: center;
+  font: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: red;
+  background-color: transparent;
+  border: 2px dotted transparent;
+  border-bottom-color: currentColor;
+  opacity: 0.75;
+}
+.input:focus {
+  opacity: 1;
+  outline: none;
+}

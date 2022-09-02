@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./banner.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+#blur-area {
+  position: absolute;
+  z-index: 1;
+  top: -100vh;
+  left: -100vw;
+  width: 200vw;
+  height: 200vh;
+  /* backdrop-filter 는 배경에 blure 효과를 준다. */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  /* radail-gradient -> 방사형 그라데이션 */
+  -webkit-mask-image: radial-gradient(
+    200px at 50% 50%,
+    transparent 50%,
+    black 100%
+  );
+  mask-image: radial-gradient(200px at 50% 50%, transparent 50%, black 100%);
+
+  mix-blend-mode: hue;
+  /* mix-blend-mode -> 요소가 겹칠 경우 색상이 어떻게 나타나야 하는지 정의 */
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+
+.text-box {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 70px;
+  color: #fff;
+}
+
+.text-box button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #037299;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}

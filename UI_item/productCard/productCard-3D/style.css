@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1200px;
+  /* transform-style : 3D 공간에서 변경된 3차원 좌표를 하위 요소에게 전달할 것인지의 여부를 결정하는 속성 */
+  /* flat : 하위요소들은 상위요소늬 3D좌표와 상관없이 2D영역에 표시된다. */
+  /* preserve-3d : 부모요소의 3D 좌표를 전달받아 3D 형태로 표현된다.  */
+  /* transform-style: preserve-3d; */
+}
+/* ==================== [card box design]  ==================== */
+.container .box {
+  position: relative;
+  margin: 40px;
+  width: 300px;
+  height: 400px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+/* ===== Nike text content ===== */
+.container .box::before {
+  content: "Nike";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 6em;
+  font-weight: 900;
+  font-style: italic;
+  transition: 0.5s;
+  opacity: 0;
+}
+/* ===== SHOES text content ===== */
+.container .box::after {
+  content: "SHOES";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 5em;
+  font-weight: 900;
+  font-style: italic;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.container .box:hover:before,
+.container .box:hover:after {
+  opacity: 0.04;
+}
+/* ==================== [card box content design]  ==================== */
+/* ===== product name ===== */
+.container .box .name {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  transform-style: preserve-3d;
+  /* translate3d() : 현재 위치에서 해당 요소를 주어진 x축, y축 , z축 의 거리만큼 이동시킨다. */
+  /* perspective() 메소드를 사용하여 원근감을 표현 가능하다. */
+  /* 예시 =>  transform: perspective(500px) translate3d(0, 0, 75px); */
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.container .box:hover .name {
+  top: 40px;
+  opacity: 1;
+}
+/* ===== buy button ===== */
+.container .box .buy {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 10px 25px;
+  color: #fff;
+  background: #111;
+  border-radius: 30px;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.container .box:hover .buy {
+  bottom: 40px;
+  opacity: 1;
+}
+
+/* ===== circle effect ===== */
+.container .box .circle {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: #111;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px);
+  transition: 0.5s;
+  opacity: 1;
+}
+/* ===== chose color of circle, buy button ===== */
+.container .box:nth-child(2) .circle,
+.container .box:nth-child(2) .buy {
+  background: #fb4b4f;
+}
+
+.container .box:nth-child(3) .circle,
+.container .box:nth-child(3) .buy {
+  background: #379bf7;
+}
+
+/* ===== product ===== */
+.container .box .product {
+  z-index: 11;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 300px;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
+  transition: 0.5s;
+}
+
+.container .box:hover .product {
+  transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+}

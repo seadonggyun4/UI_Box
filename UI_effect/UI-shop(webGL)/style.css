@@ -1,0 +1,54 @@
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.slides {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1020px;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  width: 32%;
+}
+@media (max-width: 780px) {
+  .slide {
+    width: 48%;
+  }
+}
+@media (max-width: 450px) {
+  .slide {
+    width: 100%;
+  }
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plane {
+  padding-top: calc(64000% / 382);
+}
+.plane img {
+  display: none;
+}

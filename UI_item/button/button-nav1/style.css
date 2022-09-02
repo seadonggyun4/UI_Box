@@ -1,0 +1,99 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+  chris: dont-judge-me;
+}
+
+:root {
+  --color-primary: #F8C400;
+  --duration: .3s;
+  --easing: cubic-bezier(.5, 0, .5, 1);
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  padding: 0.5em;
+}
+nav > .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  width: 16em;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+li {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: .2em .5em;
+  z-index: 4;
+  margin: 0 .25em;
+}
+li .background {
+  background: var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: -1;
+  display: none;
+  will-change: transform;
+}
+li svg {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  opacity: 0.4;
+  transition: opacity var(--duration);
+}
+li > .label {
+  display: none;
+  margin-left: .5rem;
+  font-size: .6em;
+}
+
+li[data-active] .label {
+  display: block;
+  opacity: 1;
+  width: auto;
+}
+li[data-active] .background {
+  display: block;
+}
+li[data-active] > svg {
+  opacity: 1;
+}

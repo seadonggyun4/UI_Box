@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* ============================================================ [navigation ] ============================================================ */
+
+/* ========== [navigation Box] ========== */
+.navigation {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  width: 70px;
+  /* box-sizing: : box 사이즈를 어떤것을 기준으로 계산할지; */
+  /* initial : 기본값으로 설정합니다. */
+  /* nav를 조금더 굵게만들기 위함 */
+  box-sizing: initial;
+  border-radius: 10px;
+  /* nav를 조금더 굵게만들기 위함 */
+  border-left: 5px solid #4d5bf9;
+  background: #4d5bf9;
+  transition: width 0.5s;
+  overflow-x: hidden;
+}
+
+.navigation.active {
+  width: 300px;
+}
+
+/* ========== [navigation ul, li] ========== */
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 40px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active {
+  background: #fff;
+}
+
+/* ========== [navigation b:for border-radius] ========== */
+.navigation ul li b:nth-child(1) {
+  position: absolute;
+  display: none;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background: #fff;
+}
+
+.navigation ul li b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4d5bf9;
+  border-bottom-right-radius: 15px;
+}
+
+.navigation ul li b:nth-child(2) {
+  position: absolute;
+  display: none;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background: #fff;
+}
+
+.navigation ul li b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4d5bf9;
+  border-top-right-radius: 15px;
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+
+/* ========== [navigation a, icon, title] ========== */
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation ul li.active a {
+  color: #333;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  /* 아이콘 크기 UP */
+  font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 60px;
+  /* icon 과 title의 line-height를 동일하게 맞춘다. */
+  line-height: 60px;
+  /* white-space는 스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 정하는 속성 */
+  /* 크기가 줄어들더라도 title 넓이를 보호하기 위한 nowrap */
+  white-space: nowrap;
+}
+
+/* ============================================================ [toggle ] ============================================================ */
+
+/* ========== [toggle Box] ========== */
+.toggle {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #4d5bf9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: #ff4d89;
+}
+
+/* ========== [toggle icon] ========== */
+.toggle ion-icon {
+  position: absolute;
+  display: none;
+  color: #fff;
+  font-size: 34px;
+}
+
+.toggle ion-icon.open,
+.toggle.active ion-icon.close {
+  display: block;
+}
+
+.toggle.active ion-icon.open,
+.toggle ion-icon.close {
+  display: none;
+}

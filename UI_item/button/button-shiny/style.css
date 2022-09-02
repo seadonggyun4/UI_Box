@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+a {
+  position: relative;
+  padding: 15px 30px;
+  margin: 10px;
+  width: 200px;
+  height: 50px;
+  background: #27022d;
+  border: 1px solid #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  /* before로 생성된 가상요소를 가려준다. */
+  overflow: hidden;
+}
+
+a:hover {
+  background: #a41ee9;
+}
+
+a:nth-child(2):hover {
+  background: #ff3c7f;
+}
+
+/* 그라데이션으로 생성된 가상요소 */
+/* 이 요소가 기존 버튼 왼쪽-> 오른쪽 으로 이동하는 과정이 빛난는 효과처럼 보이게 한다. */
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  transition: 0.5s;
+}
+
+a:hover::before {
+  left: 100%;
+}

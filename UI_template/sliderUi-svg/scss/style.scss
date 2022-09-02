@@ -1,0 +1,246 @@
+@charset "UTF-8";
+@import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@300&display=swap");
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 25vh 10vw 15vh; 
+    
+
+    main {
+        width: 100%;
+        height: 100%;
+        position: relative;        
+
+        h1 {
+            position: absolute;
+            left: 0px;
+            top: -50px;
+            font: 34px/1 'Rajdhani';
+            color: #555;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 1px;
+                background: #111;
+                position: absolute;
+                left: 0px;
+                top: -10px;
+            }
+        }
+
+        .btnUp {
+            display: block;
+            width: 61px;
+            height: 50px;
+            position: absolute;
+            left: -70px;
+            bottom: 160px;
+
+            &::before, &::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 20px;
+                background: #777;
+                position: absolute; 
+                top: 0px;
+                left: 50%;
+                transform-origin: right top;
+                transition: 0.5s 0.2s;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+            span {
+                display: block; 
+                width: 1px;
+                height: 40px;
+                background: #777;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transition: 0.5s;
+            }
+            p {
+                font: 12px/1 'orbitron';
+                color: #111;
+                text-align: center;
+                letter-spacing: 2px;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: 0.5s;
+            }
+
+            &:hover {
+                &::before {
+                    transform: rotate(45deg) translateY(-40px); 
+                    opacity: 0;
+                }
+                &::after {
+                    transform: rotate(-45deg) translateY(-40px);
+                    opacity: 0;
+                }
+                span {
+                    transform: translateY(-40px);
+                    opacity: 0;
+                }
+                p {
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .btnDown {
+            display: block;
+            width: 61px;
+            height: 50px;
+            position: absolute;
+            left: -70px;
+            bottom: 0px;
+
+            &::before, &::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 20px;
+                background: #777;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transform-origin: right bottom;
+                transition: 0.5s 0.2s;
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            span {
+                display: block;
+                width: 1px;
+                height: 40px;
+                background: #777;
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transition: 0.5s;
+            }
+            p {
+                font: 12px/1 'orbitron';
+                color: #111;
+                text-align: center;
+                letter-spacing: 2px;
+                position: absolute;
+                top: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: 0.5s 0.4s;
+            }
+
+            &:hover {
+                &::before {
+                    transform: rotate(-45deg) translateY(40px);
+                    opacity: 0;
+                }
+                &::after {
+                    transform: rotate(45deg) translateY(40px);
+                    opacity: 0;
+                }
+                span {
+                    transform: translateY(40px);
+                    opacity: 0;
+                }
+                p {
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .panel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            li {
+                width: 100%; 
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                perspective: 400px;
+
+                .bg {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    opacity: 0;
+                    transition: 0.8s;
+
+                    .pic {
+                        width: 33vw;
+                        position: absolute;
+                        bottom: 5vh;
+                        right: -5vw;
+
+                        path {
+                            stroke: #111;
+                            stroke-width: 1;
+                            fill: rgba(0,0,0,0);
+                            stroke-dasharray: 2400;
+                            stroke-dashoffset: 2400;
+                            transition: stroke-dashoffset 2s 0.5s, fill 0.5s 1.5s;
+                        }
+                    }
+                }
+
+                &:nth-of-type(1) .bg {
+                    background: rgb(199, 245, 253);
+                }
+                &:nth-of-type(2) .bg {
+                    background: rgb(186, 255, 213);
+                }
+                &:nth-of-type(3) .bg {
+                    background: rgb(240, 255, 200);
+                }
+                &:nth-of-type(4) .bg {
+                    background: rgb(255, 209, 251);
+                }
+
+                &.on .bg {
+                    opacity: 1;
+                    transform: translateY(0%) rotateX(0deg);
+
+                    path {
+                        fill: rgba(0,0,0,.5);
+                        stroke-dashoffset: 0;
+                    }
+                }
+                &.up .bg {
+                    opacity: 0; 
+                    transform: translateY(-80%) rotateX(50deg);
+                }
+                &.down .bg {
+                    opacity: 0;
+                    transform: translateY(80%) rotateX(-50deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:radial-gradient(#eac4ff,#9e57c5);
+}
+
+.stairs
+{
+  position: relative;
+  width: 500px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(43deg);
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100%{
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+/* 바닥 부분 */
+.stairs .base
+{
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 360px;
+  height: 300px;
+  /* background:#000; */
+  background: #a54bcf;
+  transform: rotateX(90deg) translateZ(-150px) scale(1.2);
+  filter: blur(20px);
+  opacity: 0.5;
+}
+/* 가운데 틀 */
+.stairs .step{
+  position: absolute;
+  bottom: 0;
+  left: calc(60px * var(--j));
+  width: 60px;
+  height: calc(60px * var(--j));
+  /* background: #f00; */
+  transform-style: preserve-3d ;
+}
+/* step 바닥 */
+.stairs .step::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 300px;
+  background: #cf8df1;
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.stairs .step:hover:before{
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+/* step 정면 */
+.stairs .step::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 60px;
+  background: #ae52dd;
+  transform: rotateY(90deg) translateZ(-150px);
+}
+
+.stairs .step i{
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 100%;
+  background: #a54bcf;
+  transform-style: preserve-3d;
+}
+/* step 왼쪽 */
+.stairs .step i:nth-child(1){
+  transform: translateZ(150px);
+}
+/* step 오른쪽 */
+.stairs .step i:nth-child(2){
+  transform: translateZ(-150px);
+}
+
+/* 계단 뒷면 */
+.stairs .step:last-child i:nth-child(2)::before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: #ae52dd;
+  transform: rotateY(90deg) translate3d(-150px, 0, -90px);
+}

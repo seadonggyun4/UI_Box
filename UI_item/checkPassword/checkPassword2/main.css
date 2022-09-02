@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Special+Elite&display=swap");
+body {
+  background: #553e8f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.pwGuide {
+  position: relative;
+  width: 250px;
+  height: 160px;
+}
+.pwGuide .pwList {
+  position: absolute;
+  top: 25px;
+  left: 52px;
+  width: 194px;
+  height: 104px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: inset 3px 0 0 #cfdae1;
+  transform: rotate(-5deg) translate3d(0, 0, 0);
+  font-family: 'Special Elite', cursive;
+  font-size: 12px;
+}
+.pwGuide .pwList:before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: #e45998;
+  position: absolute;
+  left: 22px;
+}
+.pwGuide .pwList ul {
+  padding: 13px 0 0 0;
+}
+.pwGuide .pwList ul li {
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  padding-left: 34px;
+  border-bottom: 1px solid #d8cbf5;
+}
+.pwGuide .pwList ul li span {
+  position: relative;
+  color: #423666;
+}
+.pwGuide .pwList ul li span:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #70d5b9;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.pwGuide .pwList ul li span.valid:after {
+  transform: scaleX(1);
+}
+.pwGuide .pwCheck {
+  position: absolute;
+  fill: none;
+  top: 84px;
+  right: 10px;
+}
+.pwCheck {
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.86, 0.45, 0.72, 1.2);
+}
+.pwCheck.pwValid {
+  transform: scale(1);
+}
+.inp-password {
+  position: relative;
+  margin: 40px 0 0 0;
+  max-width: 240px;
+}
+.inp-password input {
+  background: #3a296a;
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  font-size: 16px;
+  padding: 2px 60px 0 16px;
+  height: 44px;
+  margin: 0;
+  font-family: sans-serif;
+  color: #fff;
+}
+.inp-password input:focus {
+  outline: none;
+}
+.inp-password #showPW {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  line-height: 14px;
+  cursor: pointer;
+  color: #f6bd41;
+  font-size: 12px;
+  font-family: 'Special Elite', cursive;
+  font-weight: bold;
+}
+.inp-password #showPW:after {
+  content: 'HIDE';
+}
+.inp-password #showPW.hide:after {
+  content: 'SHOW';
+}
+.dribbble {
+  position: fixed;
+  right: 20px;
+  bottom: 16px;
+  color: #d92d79;
+  font-family: 'Special Elite', cursive;
+  font-size: 15px;
+  text-decoration: none;
+}
+::-webkit-input-placeholder {
+  color: #ad9ed3;
+}

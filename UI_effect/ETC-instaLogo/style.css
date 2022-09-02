@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bitter", serif;
+}
+
+/* 가운데 정렬을 위함 */
+.display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #091836;
+}
+
+.container h1 {
+  margin-left: 50px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 500;
+  -webkit-box-reflect: below 1px linear-gradient(transparent 50%, #0004);
+}
+
+/* ===  LOGO background === */
+.insta {
+  width: 270px;
+  height: 270px;
+  /* insta-logo background color */
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+  border-radius: 54px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0004);
+}
+
+/* ===  LOGO inner white square === */
+.insta-inner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 18px solid #fff;
+  border-radius: 54px;
+}
+/* ===  LOGO inner little circle === */
+.insta-inner::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+}
+/* ===  LOGO inner white square2 === */
+.insta-inner2 {
+  width: 100px;
+  height: 100px;
+  border: 18px solid #fff;
+  border-radius: 50%;
+}

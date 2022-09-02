@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #061c2d;
+}
+
+section{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  height: 2000px;
+}
+
+/* ================================================ 글자 색션 ================================================ */
+/* ========== 큰글자 ========== */
+/* 
+왼쪽 -> 오른쪽으로 간다 
+크기는 0 -> 1
+*/
+
+section .reveal{
+  position: relative;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 500;
+  /* 
+  transform-origin: transform 효과로 형태를 변형시키는 기준점
+   */
+  transform-origin: left; /*왼쪽*/
+  transform: scaleX(0); /*크기0*/
+  transition: .5s;
+  transition-delay: .5s; /*5초*/
+}
+
+/* ========== 작은글자  ==========*/
+section .reveal:nth-child(2){
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+/* ================================================ 가림막 색션 ================================================ */
+/* ========== 큰 글자 가림막 ========== */
+section .reveal::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e02bff; 
+  transform-origin: right; /*오른쪽*/
+  transition: .5s;
+  transition-delay: 0;  /*0초 -> 글자가 작아지기전 먼저 작아저야한다.*/
+}
+
+/* ========== 작은글자 가림막  ==========*/
+section .reveal:nth-child(2)::before{
+  background:#ffeb3b;
+}
+
+
+/* ================================================ active 색션 ================================================ */
+section .reveal.active{
+  transform: scaleX(1); /*크기1*/
+  transition-delay: 0s; /*0초*/
+}
+
+section .reveal.active::before{
+  transform: scaleX(0);
+  transition-delay: 0.5s; /*0.5초 -> 글자 가 나타난 뒤에 가림막은 나타나야 한다.*/
+}
+
+section img{
+  position: relative;
+  display: block;
+  margin-left: 10px;
+  margin-top: 20px;
+  max-width: 300px;
+  max-height: 300px;
+}

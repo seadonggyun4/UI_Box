@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Password</title>
+
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div id="app">
+        <h2> Password Strength</h2>
+    
+        <div class="input_container">
+            <ul>
+                <li v-bind:class="{ is_valid: contains_eight_characters }">8 Characters</li>
+                <li v-bind:class="{ is_valid: contains_number }">Contains Number</li>
+                <li v-bind:class="{ is_valid: contains_uppercase }">Contains Uppercase</li>
+                <li v-bind:class="{ is_valid: contains_special_character }">Contains Special Character</li>
+            </ul>
+    
+            <div class="checkmark_container" v-bind:class="{ show_checkmark: valid_password }">		
+                <svg width="50%" height="50%" viewBox="0 0 140 100">
+                    <path class="checkmark" v-bind:class="{ checked: valid_password }" d="M10,50 l25,40 l95,-70" />
+                </svg>
+            </div>
+            
+        <input type="password" @input="checkPassword" v-model="password" autocomplete="off" placeholder="Password" />
+        </div>
+    </div>
+
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- main.js -->
+    <script src="./main.js"></script>
+</body>
+</html>

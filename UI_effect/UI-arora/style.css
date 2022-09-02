@@ -1,0 +1,73 @@
+@font-face {
+  src: url("https://assets.codepen.io/2479807/Matter-Regular.woff2");
+  font-family: "Matter Regular";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100vh;
+  width: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Matter Regular", sans-serif;
+}
+
+h1 {
+  margin-bottom: 64px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+h1 {
+  font-size: 24px;
+}
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: calc( 24px + 56 * ( (100vw - 500px) / 1420 ) );
+  }
+}
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 80px;
+  }
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 16px 64px;
+  font-size: 18px;
+  font-family: inherit;
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+.hero {
+  height: 100vh;
+  min-height: 800px;
+  padding: 120px 40px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.hero__content {
+  max-width: 1400px;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}

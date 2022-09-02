@@ -1,0 +1,134 @@
+/* 1. SVG 태그란?
+- SVG태그는 Scalable Vector Graphics의 약자로 벡터 기반 그래픽을 XML 형식으로 정의하는 것을 의미합니다.
+
+- SVG태그는 SVG그래픽을 담기 위한 요소입니다.
+
+- SVG태그 내부에 담을 수 있는 것은 원, 사각형, 다각형, 라인,  path 등이 있습니다. 
+
+- SVG태그는 파일의 모든 요소와 모든 속성에 애니메이션을 적용할 수 있습니다.  */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+}
+
+.container .icon {
+  width: 200px;
+}
+
+.container .icon path {
+  fill: transparent;
+  stroke-width: 100;
+}
+
+/* ============================== 하트 모양 ============================== */
+.container .icon.heart path {
+  /* 1. stroke-dasharray의 첫번째 수는 점선 하나의 길이, 점선 하나가 아이콘 모양 전체를 띄는 크기를 찾아낸다 */
+  stroke-dasharray: 15500;
+  /* 2. stroke-dashoffset은 점선을 어디서부터 시작해서 보여줄지 지정한는 속성이다 ->0 일경우 처음부터 */
+  stroke-dashoffset: 0;
+  stroke: #e31770;
+}
+
+.container .icon.heart:hover path {
+  animation-name: animate-heart;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  /* animation-fill-mode:forwards ->  애니메이션이 끝난후 마지막 상태 유지 */
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 15500;
+  }
+  80% {
+    stroke-dashoffset: 31000;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 31000;
+    fill: #e31770;
+  }
+}
+
+/* ============================== 별 모양 ============================== */
+.container .icon.star path {
+  stroke: #ffcb32;
+  stroke-dasharray: 17700;
+  stroke-dashoffset: 0;
+}
+
+.container .icon.star:hover path {
+  animation-name: animate-star;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-star {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 17700;
+  }
+  80% {
+    stroke-dashoffset: 35400;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 35400;
+    fill: #ffcb32;
+  }
+}
+/* ============================== 달 모양 ============================== */
+.container .icon.moon path {
+  stroke-dasharray: 17650;
+  stroke-dashoffset: 0;
+  stroke: #31e8ff;
+}
+
+.container .icon.moon:hover path {
+  animation-name: animate-moon;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-moon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 17650;
+  }
+  80% {
+    stroke-dashoffset: 35300;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 35300;
+    fill: #31e8ff;
+  }
+}

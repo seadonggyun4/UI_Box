@@ -1,0 +1,98 @@
+<!-- https://www.youtube.com/watch?v=liW6bDLnuuk -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <section>
+    <div class="blob">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: rgb(255, 95, 109);"></stop>
+      <stop offset="100%" style="stop-color: rgb(255, 195, 113);"></stop>
+          </linearGradient>
+        </defs>
+        <path  fill="url(#gradient)">
+          <!-- svg 파일 애니메이션 적용 -->
+          <animate attributeName="d"
+            dur="10000ms"
+            repeatCount="indefinite"
+            values="
+            M435,319Q415,388,353.5,439Q292,490,229.5,442Q167,394,105,359.5Q43,325,31.5,
+            245.5Q20,166,83,118Q146,70,216.5,55.5Q287,41,332,92.5Q377,
+            144,416,197Q455,250,435,319Z;
+
+
+            M434,322.5Q423,395,352,411.5Q281,428,228,404.5Q175,381,105,
+            354.5Q35,328,26,246.5Q17,165,79.5,114.5Q142,64,210,78Q278,92,359,
+            91.5Q440,91,442.5,170.5Q445,250,434,322.5Z;
+
+            M434,319Q415,388,353,435.5Q291,483,229.5,437.5Q168,392,
+            97.5,361.5Q27,331,64,263.5Q101,196,116,120Q131,44,204,70.5Q277,
+            97,352.5,99Q428,101,440.5,175.5Q453,250,434,319Z;
+
+            M412,306Q384,362,333,396Q282,430,206,444Q130,
+            458,76,395.5Q22,333,28.5,252.5Q35,172,81.5,105.5Q128,
+            39,208.5,34.5Q289,30,349.5,73Q410,116,425,183Q440,250,
+            412,306Z;
+
+            M435,319Q415,388,353.5,439Q292,490,229.5,442Q167,394,105,359.5Q43,325,31.5,
+            245.5Q20,166,83,118Q146,70,216.5,55.5Q287,41,332,92.5Q377,
+            144,416,197Q455,250,435,319Z;
+            "
+          ></animate>
+        </path>
+      </svg>
+    </div>
+    <!-- to glow effect -->
+    <div class="blob glow">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color: rgb(255, 95, 109);"></stop>
+      <stop offset="100%" style="stop-color: rgb(255, 195, 113);"></stop>
+          </linearGradient>
+        </defs>
+        <path  fill="url(#gradient)">
+          <animate attributeName="d"
+            dur="10000ms"
+            repeatCount="indefinite"
+            values="
+            M435,319Q415,388,353.5,439Q292,490,229.5,442Q167,394,105,359.5Q43,325,31.5,
+            245.5Q20,166,83,118Q146,70,216.5,55.5Q287,41,332,92.5Q377,
+            144,416,197Q455,250,435,319Z;
+
+
+            M434,322.5Q423,395,352,411.5Q281,428,228,404.5Q175,381,105,
+            354.5Q35,328,26,246.5Q17,165,79.5,114.5Q142,64,210,78Q278,92,359,
+            91.5Q440,91,442.5,170.5Q445,250,434,322.5Z;
+
+            M434,319Q415,388,353,435.5Q291,483,229.5,437.5Q168,392,
+            97.5,361.5Q27,331,64,263.5Q101,196,116,120Q131,44,204,70.5Q277,
+            97,352.5,99Q428,101,440.5,175.5Q453,250,434,319Z;
+
+            M412,306Q384,362,333,396Q282,430,206,444Q130,
+            458,76,395.5Q22,333,28.5,252.5Q35,172,81.5,105.5Q128,
+            39,208.5,34.5Q289,30,349.5,73Q410,116,425,183Q440,250,
+            412,306Z;
+
+            M435,319Q415,388,353.5,439Q292,490,229.5,442Q167,394,105,359.5Q43,325,31.5,
+            245.5Q20,166,83,118Q146,70,216.5,55.5Q287,41,332,92.5Q377,
+            144,416,197Q455,250,435,319Z;
+            "
+          ></animate>
+        </path>
+      </svg>
+    </div>
+    
+    <div class="img"></div>
+  </section>
+</body>
+</html>

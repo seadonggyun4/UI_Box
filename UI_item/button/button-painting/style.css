@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #daffc2;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px 0;
+  width: 300px;
+  height: 75px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  transition: 0.5s;
+}
+.container a:hover {
+  color: #fff;
+}
+
+.container a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: url(./btn-bg1.png);
+  /* cover -> 배경이미지가 요소보다 클때 맞추기 위해  이미지를 줄이는 방법 */
+  /* contain- > 배경이미지가 요소보다 작을때 맞추기 위해 이미지를 키우는 방법 */
+  background-size: cover;
+  /* transform-origin은 형태를 변경시키는 기준점을 지정한다. */
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+.container a:hover::before {
+  width: 100%;
+}
+
+.container a:nth-child(2)::before {
+  background-image: url(./btn-bg2.png);
+}
+
+/* span 이 제일 상위에 위치하기 위함 */
+.container a span {
+  position: relative;
+  z-index: 1;
+}

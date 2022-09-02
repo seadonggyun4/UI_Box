@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  /* 대문자 */
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+/* ====  before ====  */
+/* 넓이가 더 크고 높이가 더 작다.  */
+a::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #111;
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1);
+  transition-delay: 0.5s;
+}
+/*y축 방향으로 줄어든다.  */
+a:hover:before {
+  transform: scaleY(0);
+}
+
+/* ====  after ====  */
+/* 넓이가 더 작고 높이가 더 크다.  */
+a::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #111;
+  transition: 0.5s ease-in-out;
+  transform: scalex(1);
+}
+/*x축 방향으로 줄어든다.  */
+a:hover::after {
+  transform: scalex(0);
+}
+
+a span {
+  position: relative;
+  z-index: 3;
+}

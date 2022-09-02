@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: box;
+    color: #9faab7;
+    text-align: center;
+    background: #28312e;
+}
+
+body div{
+    padding: 5rem;
+}
+
+
+/* 라벨 */
+body label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height: 40px;
+}
+
+/* 인풋 */
+.option-input{
+    display: inline-block;
+    position: relative;
+    margin-right: .5rem;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #cbd1d8;
+    color: white;
+    transition: all .15s ease-out;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    z-index: 1000;
+}
+
+
+/* 배경원 */
+.option-input:checked::after{
+    content: '';
+    display: block;
+    position: relative;
+    animation: click-wave .75s;
+    border-radius: 50%;
+    background: #40e0d0;
+    z-index: 100;
+}
+
+/* 내부 체크표시 */
+.option-input:checked::before{
+    content: '✔';
+    display: inline-block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+}
+
+@keyframes click-wave {
+    0%{
+        position: relative;
+        height: 40px;
+        width: 40px;
+        opacity: .35;
+    }
+    100%{
+        margin-left: -80px;
+        margin-top: -80px;
+        height: 200px;
+        width: 200px;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #edeeed;
+}
+
+.drops {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* === 물방울 만들기 === */
+.drop {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  /* 뒤의 배경색과 일치하게 */
+  background: transparent;
+  border-radius: 51% 49% 57% 43% / 41% 50% 50% 59%;
+  /* 물방울 질감을 표현 */
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+    15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 20px rgba(0, 0, 0, 0.05),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* === 물방울 흰색부분 === */
+.drop::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 23% 77% 50% 50% / 41% 50% 50% 59%;
+}
+
+.drop::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 74% 26% 50% 50% / 41% 50% 50% 59%;
+}
+
+/* === 물방울 여러개 만들기 === */
+
+.drop:nth-child(2) {
+  transform: scale(0.5) translate(-200px, 180px);
+  border-radius: 68% 32% 55% 45% / 41% 56% 44% 59%;
+}
+
+.drop:nth-child(3) {
+  transform: scale(0.4) translate(300px, 10px);
+  border-radius: 35% 65% 48% 52% / 57% 68% 32% 43%;
+}
+
+.drop:nth-child(4) {
+  transform: scale(0.35) translate(120px, -350px);
+  border-radius: 50% 50% 52% 48% / 68% 36% 64% 32%;
+}

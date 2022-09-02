@@ -1,0 +1,50 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1 {
+margin: 0;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+background-color: transparent;
+border: 0;
+
+//   &은 and 와 같은 역할
+&:focus {
+    outline: none;
+    box-shadow: none;
+}
+}
+
+a,
+button {
+cursor: pointer;
+}
+
+button {
+padding: 0;
+}
+
+ul,
+ol {
+padding-left: 0;
+list-style: none;
+}
+
+address {
+font-style: normal;
+}

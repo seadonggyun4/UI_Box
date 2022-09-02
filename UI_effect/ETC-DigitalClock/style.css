@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #060a1f;
+}
+
+#clock h2 {
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  color: #fff;
+  font-family: "Bitter", serif;
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+#clock #time {
+  display: flex;
+}
+
+#clock #time div {
+  position: relative;
+  margin: 0 12px;
+  /* 요소를 반사시키는 명령어 */
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+}
+
+/* 시, 분 시계 생성 */
+#clock #time div span {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 150px;
+  background-color: #2196f3;
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+  font-size: 5em;
+}
+
+#clock #time div span:nth-child(2) {
+  z-index: 9;
+  height: 100px;
+  background-color: #127fd6;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* 초 시계 생성 */
+#clock #time div:last-child span {
+  background-color: #ff006a;
+}
+
+#clock #time div:last-child span:nth-child(2) {
+  background-color: #ec0062;
+}

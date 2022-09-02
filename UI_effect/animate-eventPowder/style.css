@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+}
+.canvasTTL p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(1.0,1.2);
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  letter-spacing: 0px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 6vw;
+  color: #fff;
+}
+@media screen and (max-width: 1024px) {
+  .canvasTTL p{
+    font-size: 12vw;
+  }
+}
+#myCanvas canvas{
+  background: #03a9f4;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
