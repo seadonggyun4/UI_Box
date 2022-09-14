@@ -1,0 +1,37 @@
+/* reset css */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Noto Sans KR';
+}
+
+
+body{
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button{
+  outline: none;
+  border: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+em{
+  font-style: normal;
+}
+
+li{
+  list-style: none;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+

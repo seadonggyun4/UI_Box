@@ -1,0 +1,140 @@
+.used-status{
+    position: relative;
+    display: grid; //?
+    grid-template-columns: repeat(2, 1fr); //?
+    grid-gap: 30px; //?
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+
+    .usedBx{
+        @include flexbox-column(center,start);
+        padding: 20px;
+        min-height: 400px;
+        background: $white;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+        border-radius: 20px;
+        border-top: 3px solid $black2;
+
+        h2{
+            @include flexbox(start, start);
+            margin-bottom: 15px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border-bottom: 2px solid $grey;
+        }
+
+        .statusList{
+            width: 100%;
+            padding: 10px 0;
+
+            li{
+                margin-bottom: 10px;
+                width: 100%;
+                
+                .text-group{
+                    @include flexbox(between,center);
+                    
+                    padding: 5px 0;
+                    width: 100%;
+
+                    &-title{
+                        @include flexbox(start, center);
+                        flex-wrap: wrap;
+
+                        h4{
+                            margin-right: 3px;
+                            font-weight: 500;
+                        }
+
+                        em{
+                            color:$black2;
+                            font-size: 12px;
+                        }
+                    }
+
+                    p{
+                        font-size: 20px;
+                        font-weight: 500;
+
+                        &.host{
+                            color: $blue;
+                        }
+
+                        &.vd{
+                            color:$green
+                        }
+                    }
+                }
+
+                .status-bg{
+                    position: relative;
+                    width: 100%;
+                    height: 13px;
+                    background: $grey2;
+                    border-radius: 15px;
+                    overflow: hidden;
+
+                    span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0px;
+                        height: 100%;
+                        border-radius: 15px;
+                        transition: all 2.5s ease-in-out; 
+                        transform: translate3d(-200%, 0, 0);
+
+                        &.host{
+                            // background: $blue;
+                            background: linear-gradient(90deg, rgba(32,140,216,1) 45%, rgba(0,212,255,1) 78%);;
+                        }
+
+                        &.vd{
+                            // background: $green;
+                            background: linear-gradient(90deg, rgba(76,175,80,1) 35%, rgba(0,255,111,1) 77%);
+                        }
+                    }
+                }
+
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &.active{
+            .statusList{
+                li{
+                    .status-bg{
+                        span{
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &.host{
+            border-color: $blue;
+        }
+
+        &.vd{
+            border-color: $green;
+        }
+    }
+
+
+
+    //responsive
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr); //?
+    }
+}
+
+
+
+
+

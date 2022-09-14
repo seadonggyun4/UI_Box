@@ -1,0 +1,33 @@
+.graphBox{
+  @include flexbox(center,center);
+  position: relative;
+  grid-gap: 30px;
+  padding: 20px;
+  width: 100%;
+  min-height: 200px;
+
+
+  .box{
+    @include flexbox-column(center,center);
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    border-top: 3px solid $black2;
+
+    h2{
+      margin-bottom: 15px;
+    }
+  }
+
+
+  //responsive
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
+}
+

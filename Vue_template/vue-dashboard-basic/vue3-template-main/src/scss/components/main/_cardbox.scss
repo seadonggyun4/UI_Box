@@ -1,0 +1,148 @@
+.cardbox{
+  position: relative;
+  display: grid; // ?
+  grid-template-columns: repeat(4, 1fr); //?
+  grid-gap: 30px;
+  padding: 20px;
+  width: 100%;
+  
+  .card{
+    @include flexbox-column(center,center);
+    position: relative;
+    padding: 10px;
+    background: $white;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    transition: .5s;
+    overflow: hidden;
+    cursor: pointer;
+
+    .card-title{
+      padding: 10px 0;
+      width: 100%; 
+      text-align: center;
+      border-bottom: 1px solid $grey;
+
+      h2{
+        font-size: 17px
+      }
+    }
+
+    .card-content{
+      @include flexbox(between, center);
+      padding: 25px;
+      width: 100%;
+
+      .iconBx{
+        font-size: 3.5em;
+        color: $black2;
+      }
+  
+      .numbers{
+        position: relative;
+        margin-bottom: 5px;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-align: end;
+        white-space: nowrap;
+        color: $blue;
+      }
+  
+      .cardName{
+        color: $black2;
+        font-size: 1.1em;
+        text-align: end;
+        white-space: nowrap;
+      }
+    }
+
+    .status-list{
+      @include flexbox(between, center);
+      padding: 10px;
+      width: 100%;
+
+      .status{
+        @include flexbox(between,center);
+        flex-wrap: wrap;// 줄바꿈 가능
+        padding: 0 10px;
+        margin-right: 10px;
+        border-right: 1px solid $grey;
+        width: 100%;
+
+        .imgBx{
+          width: 35px;
+          height: 35px;
+
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .textBx{
+          @include flexbox-column(center,center);
+
+          .text-primary{
+            color: $blue;
+          }
+
+          .text-warning{
+            color: $yellow;
+          }
+
+          .text-error{
+            color:$red;
+          }
+        }
+
+        &:last-child{
+          margin-right: 0px;
+          border-right: none;
+        }
+      }
+    }
+
+    &.host{
+      border-top: 3px solid $blue;
+    }
+
+    &.vd{
+      border-top: 3px solid $green;
+    }
+
+    &.blue{
+      padding: 0px;
+      
+      .card-title{
+        background: $blue;
+        color: $white;
+        border-bottom: none
+      }
+    }
+
+
+    
+
+    // &:hover{
+    //   background: $blue;
+
+    //   .numbers,
+    //   .cardName,
+    //   .iconBx{
+    //     color:$white;
+    //   }
+    // }
+  }
+
+
+  // responsive
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr); //?
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr); //?
+  }
+}
+
