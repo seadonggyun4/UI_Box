@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs-note</title>
+
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    
+    <input class="variation" id="solid" type="radio" value="1" name="border" checked="checked"/>
+    <label for="solid"><span class="circle"></span><span>Flat UI</span></label>
+    <input class="variation" id="shadow" type="radio" value="2" name="border"/>
+    <label for="shadow"> <span class="circle"></span><span>Realistic</span></label>
+    <div class="folder">
+    <div class="tabs">
+        <button class="tab active" onclick="openTab(event, 'tab-1')">
+        <div><span>Work stuff</span></div>
+        </button>
+        <button class="tab" onclick="openTab(event, 'tab-2')">
+        <div><span>Food</span></div>
+        </button>
+        <button class="tab" onclick="openTab(event, 'tab-3')">
+        <div><span>Baking</span></div>
+        </button>
+        <button class="tab" onclick="openTab(event, 'tab-4')">
+        <div><span>Cat</span></div>
+        </button>
+    </div>
+    <div class="content">
+        <div class="content__inner" id="tab-1">
+        <div class="page">
+            <p>Productize. Optics accountable talk. Thought shower. High performance keywords market-facing drink from the firehose, or you better eat a reality sandwich before you walk back in that boardroom, but accountable talk knowledge process outsourcing. </p>
+            <p>What's our go to market strategy? cross functional teams enable out of the box brainstorming nor zeitgeist viral engagement. Deep dive. Organic growth quick sync, feed the algorithm. </p>
+        </div>
+        </div>
+        <div class="content__inner" id="tab-2">
+        <div class="page">
+            <p>I love cheese, especially the big cheese gouda. Monterey jack red leicester roquefort cheese and wine fromage frais smelly cheese melted cheese dolcelatte. Fromage smelly cheese manchego paneer cheese and wine danish fontina macaroni cheese red leicester. </p>
+            <p>Stilton fondue queso emmental when the cheese comes out everybody's happy croque monsieur queso paneer. Say cheese pecorino swiss boursin halloumi cottage cheese taleggio boursin. </p>
+        </div>
+        </div>
+        <div class="content__inner" id="tab-3">
+        <div class="page">
+            <p>Cupcake ipsum dolor sit amet jujubes tart. Tiramisu icing gingerbread halvah cake. Marzipan cake soufflé cookie brownie ice cream cupcake. Dragée croissant bonbon ice cream oat cake jelly cookie. Wafer candy dessert jelly jelly-o. </p>
+            <p>Oat cake donut powder pastry wafer brownie cupcake caramels bear claw. Bonbon caramels oat cake cake shortbread. Cake cheesecake candy icing bear claw marshmallow icing jelly. Halvah biscuit pudding danish cookie bonbon gummies.</p>
+        </div>
+        </div>
+        <div class="content__inner" id="tab-4">
+        <div class="page">
+            <p>Miaow then turn around and show you my bum flee in terror at cucumber discovered on floor. Terrorize the hundred-and-twenty-pound rottweiler and steal his bed, not sorry sleep on dog bed, force dog to sleep on floor and grab pompom in mouth and put in water dish cats are fats i like to pets them they like to meow back present belly, scratch hand when stroked. </p>
+            <p>Bleghbleghvomit my furball really tie the room together love asdflkjaertvlkjasntvkjn (sits on keyboard) but bawl under human beds.</p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

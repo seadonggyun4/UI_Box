@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+
+html, body, .wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.sq {
+  display: block;
+  width: 920px;
+  height: 920px;
+  background: rgba(0,0,0,0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sq0 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/csZBTWg.png') center no-repeat;
+  z-index: 99;
+}
+
+.sq1 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Nx1ynN8.png') center no-repeat;
+  z-index: 98;
+}
+
+.sq2 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/mjxuojh.png') center no-repeat;
+  z-index: 97;
+}
+
+.sq3 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Lco4D68.png') center no-repeat;
+  z-index: 96;
+}
+
+.sq4 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/6ECfCYU.png') center no-repeat;
+  z-index: 95;
+}
+
+.sq5 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/69f1r1R.png') center no-repeat;
+  z-index: 94;
+}
+
+.sq6 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/T2aLa4j.png') center no-repeat;
+  z-index: 93;
+}
+
+.sq7 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/ZFeqswq.png') center no-repeat;
+  z-index: 92;
+}
+
+.sq8 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/pROjk3i.png') center no-repeat;
+  z-index: 91;
+}
+
+.sq9 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/CHTO2AD.png') center no-repeat;
+  z-index: 90;
+}
+
+.sq10 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/YWXzrsV.png') center no-repeat;
+  z-index: 89;
+}
+
+.sq11 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/whx7JDJ.png') center no-repeat;
+  z-index: 88;
+}
+
+.sq12 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/I4Y5DMd.png') center no-repeat;
+  z-index: 87;
+}
+
+.sq13 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/4oN40ZA.png') center no-repeat;
+  z-index: 86;
+}
+
+.sq14 {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/w6U9R8c.png') center no-repeat;
+  z-index: 85;
+}

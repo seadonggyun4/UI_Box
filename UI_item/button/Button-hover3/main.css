@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 1em 2em;
+    border: 0.125em solid #474747;
+    box-shadow: 0.5em 0.5em 0 -0.125em #FFF, 0.5em 0.5em #a0a0a0;
+    overflow: hidden;
+    position: relative;
+    color: #474747;
+    font: 18px "Space Mono";
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+  .btn:after {
+    content: "";
+    background: #474747;
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(-45deg) translateY(-3em);
+    transform-origin: 0% 100%;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    color: #FFF;
+    box-shadow: 1em 1em 0 -0.125em #FFF, 1em 1em #a0a0a0;
+  }
+  .btn:hover:after {
+    transform: rotate(0deg);
+  }

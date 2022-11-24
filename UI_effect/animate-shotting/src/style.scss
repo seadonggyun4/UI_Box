@@ -1,0 +1,58 @@
+$shooting-time: 4000ms;
+
+body {
+  height: 100vh;
+  background: #3f2b96;
+}
+
+.shooting_star {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(95, 145, 255, 0.35), rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+  animation:
+    tail $shooting-time linear infinite,
+    shooting $shooting-time linear infinite;
+  
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      $delay: random(9999) + 0ms;
+      top:  percentage(random(100) / 100);
+      left: 0;
+      animation-delay: $delay;
+    }
+  }
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  
+  25% {
+    opacity: 100%;
+  }
+  
+   75% {
+    opacity: 100%;
+  }
+  
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(100%);
+  }
+}
