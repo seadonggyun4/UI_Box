@@ -9,6 +9,8 @@
   --shadow: 0 2px 8px -1px rgba(18, 22, 33, 0.04);
   --shadow-hover: 0 4px 20px -2px rgba(18, 22, 33, 0.12);
 }
+
+
 .button.fast {
   --duration: .32s;
 }
@@ -22,7 +24,7 @@
   --shadow: 0 2px 8px -1px rgba(39, 94, 254, 0.32);
   --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
   --font-shadow: var(--font-size);
-  padding: 16px 32px;
+  padding: 16px 33px;
   font-family: "Roboto";
   font-weight: 500;
   line-height: var(--font-size);
